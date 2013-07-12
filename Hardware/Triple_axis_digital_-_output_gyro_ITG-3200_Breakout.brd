@@ -1474,11 +1474,10 @@ design rules under a new name.</description>
 <wire x1="33.02" y1="-2.54" x2="33.02" y2="-3.683" width="0.254" layer="16"/>
 <wire x1="33.02" y1="-3.683" x2="33.909" y2="-4.572" width="0.254" layer="16"/>
 <via x="33.909" y="-4.572" extent="1-16" drill="0.508"/>
-<wire x1="33.909" y1="-4.572" x2="33.401" y2="-4.064" width="0.254" layer="1"/>
-<wire x1="33.401" y1="-4.064" x2="32.004" y2="-4.064" width="0.254" layer="1"/>
-<wire x1="32.004" y1="-4.064" x2="31.75" y2="-4.318" width="0.254" layer="1"/>
-<wire x1="31.75" y1="-4.318" x2="31.75" y2="-5.513" width="0.254" layer="1"/>
-<wire x1="31.75" y1="-5.513" x2="31.7808" y2="-5.5438" width="0.254" layer="1"/>
+<wire x1="31.7808" y1="-5.5438" x2="31.7754" y2="-5.5384" width="0.254" layer="1"/>
+<wire x1="31.7754" y1="-5.5384" x2="31.7754" y2="-4.826" width="0.254" layer="1"/>
+<wire x1="31.7754" y1="-4.826" x2="32.0294" y2="-4.572" width="0.254" layer="1"/>
+<wire x1="32.0294" y1="-4.572" x2="33.909" y2="-4.572" width="0.254" layer="1"/>
 </signal>
 <signal name="INT">
 <contactref element="JP2" pad="4"/>
@@ -1522,8 +1521,10 @@ design rules under a new name.</description>
 <signal name="N$2">
 <contactref element="C3" pad="1"/>
 <contactref element="U1" pad="10"/>
-<wire x1="28.4038" y1="-7.87" x2="25.23" y2="-7.87" width="0.254" layer="1"/>
-<wire x1="25.23" y1="-7.87" x2="24.98" y2="-7.62" width="0.254" layer="1"/>
+<wire x1="28.4038" y1="-7.87" x2="28.3998" y2="-7.874" width="0.254" layer="1"/>
+<wire x1="28.3998" y1="-7.874" x2="27.1018" y2="-7.874" width="0.254" layer="1"/>
+<wire x1="27.1018" y1="-7.874" x2="26.8478" y2="-7.62" width="0.254" layer="1"/>
+<wire x1="26.8478" y1="-7.62" x2="24.98" y2="-7.62" width="0.254" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U1" pad="20"/>
