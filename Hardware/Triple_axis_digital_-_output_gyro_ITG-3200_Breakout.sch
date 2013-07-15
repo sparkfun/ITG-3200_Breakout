@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -7374,6 +7374,70 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Resistors">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find resistors, capacitors, inductors, test points, jumper pads, etc.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; CC v3.0 Share-Alike You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="0603-RES">
+<wire x1="-1.473" y1="0.983" x2="1.473" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="0.983" x2="1.473" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="-0.983" x2="-1.473" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-1.473" y1="-0.983" x2="-1.473" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="-0.356" y1="0.432" x2="0.356" y2="0.432" width="0.1016" layer="51"/>
+<wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.1016" layer="51"/>
+<smd name="1" x="-0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<text x="-0.889" y="0.762" size="0.4064" layer="25" font="vector">&gt;NAME</text>
+<text x="-1.016" y="-1.143" size="0.4064" layer="27" font="vector">&gt;VALUE</text>
+<rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
+<rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
+<rectangle x1="-0.2286" y1="-0.381" x2="0.2286" y2="0.381" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="RESISTOR">
+<wire x1="-2.54" y1="0" x2="-2.159" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-2.159" y1="1.016" x2="-1.524" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="-1.016" x2="-0.889" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-0.889" y1="1.016" x2="-0.254" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-0.254" y1="-1.016" x2="0.381" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="0.381" y1="1.016" x2="1.016" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="-1.016" x2="1.651" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="1.651" y1="1.016" x2="2.286" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="2.286" y1="-1.016" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<text x="-3.81" y="1.4986" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="10KOHM1/10W1%(0603)" prefix="R" uservalue="yes">
+<description>RES-00824</description>
+<gates>
+<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="0603" package="0603-RES">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-00824"/>
+<attribute name="VALUE" value="10K" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7411,6 +7475,7 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="LOGO1" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="S"/>
 <part name="LOGO2" library="SparkFun-Aesthetics" deviceset="LOGO-SFE" device="SK"/>
+<part name="R3" library="SparkFun-Resistors" deviceset="10KOHM1/10W1%(0603)" device="0603" value="10K"/>
 </parts>
 <sheets>
 <sheet>
@@ -7419,13 +7484,13 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <wire x1="127" y1="116.84" x2="149.86" y2="116.84" width="0.2032" layer="97" style="shortdash"/>
 <wire x1="149.86" y1="116.84" x2="149.86" y2="132.08" width="0.2032" layer="97" style="shortdash"/>
 <wire x1="149.86" y1="132.08" x2="127" y2="132.08" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="147.066" y1="95.758" x2="147.066" y2="77.724" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="147.066" y1="77.724" x2="160.02" y2="77.724" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="160.02" y1="77.724" x2="160.02" y2="105.156" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="160.02" y1="105.156" x2="147.066" y2="105.156" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="147.066" y1="105.156" x2="147.066" y2="96.012" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="157.226" y1="95.758" x2="157.226" y2="77.724" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="157.226" y1="77.724" x2="170.18" y2="77.724" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="170.18" y1="77.724" x2="170.18" y2="130.556" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="170.18" y1="130.556" x2="157.226" y2="130.556" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="157.226" y1="130.556" x2="157.226" y2="96.012" width="0.2032" layer="97" style="shortdash"/>
 <text x="152.654" y="112.014" size="1.778" layer="97" rot="R90">Optional Pull-ups</text>
-<text x="163.322" y="75.438" size="1.778" layer="97" rot="R90">I2C Address Selection</text>
+<text x="178.562" y="75.438" size="1.778" layer="97" rot="R90">I2C Address Selection</text>
 <text x="149.606" y="6.604" size="3.048" layer="94" ratio="15">Jim Lindblom</text>
 <text x="237.49" y="6.858" size="3.048" layer="94" ratio="15">V12</text>
 <text x="203.708" y="11.176" size="2.54" layer="94">Revision by:</text>
@@ -7443,8 +7508,8 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <instance part="GND4" gate="1" x="71.12" y="63.5"/>
 <instance part="C4" gate="G$1" x="60.96" y="81.28"/>
 <instance part="GND5" gate="1" x="60.96" y="63.5"/>
-<instance part="P+3" gate="1" x="152.4" y="99.06"/>
-<instance part="GND6" gate="1" x="152.4" y="81.28"/>
+<instance part="P+3" gate="1" x="162.56" y="121.92"/>
+<instance part="GND6" gate="1" x="162.56" y="81.28"/>
 <instance part="R1" gate="G$1" x="134.62" y="124.46" rot="R90"/>
 <instance part="R2" gate="G$1" x="142.24" y="124.46" rot="R90"/>
 <instance part="JP2" gate="G$1" x="208.28" y="93.98" rot="R180"/>
@@ -7452,7 +7517,7 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <instance part="P+5" gate="1" x="142.24" y="139.7"/>
 <instance part="GND7" gate="1" x="137.16" y="63.5"/>
 <instance part="JP6" gate="A" x="134.62" y="81.28" rot="R90"/>
-<instance part="SJ1" gate="G$1" x="152.4" y="91.44"/>
+<instance part="SJ1" gate="G$1" x="162.56" y="91.44"/>
 <instance part="U1" gate="G$1" x="109.22" y="96.52"/>
 <instance part="FID1" gate="G$1" x="170.18" y="38.1"/>
 <instance part="FID2" gate="G$1" x="175.26" y="38.1"/>
@@ -7460,6 +7525,7 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <instance part="FRAME1" gate="G$2" x="147.32" y="0"/>
 <instance part="LOGO1" gate="G$1" x="190.5" y="45.72"/>
 <instance part="LOGO2" gate="G$1" x="208.28" y="40.64"/>
+<instance part="R3" gate="G$1" x="162.56" y="109.22" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -7481,11 +7547,6 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <pinref part="P+5" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<wire x1="152.4" y1="99.06" x2="152.4" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="SJ1" gate="G$1" pin="1"/>
-<pinref part="P+3" gate="1" pin="VCC"/>
-</segment>
-<segment>
 <pinref part="P+2" gate="1" pin="VCC"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="71.12" y1="152.4" x2="71.12" y2="147.32" width="0.1524" layer="91"/>
@@ -7495,6 +7556,11 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <wire x1="96.52" y1="104.14" x2="91.44" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="1" pin="VCC"/>
 <wire x1="91.44" y1="104.14" x2="91.44" y2="111.76" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P+3" gate="1" pin="VCC"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="162.56" y1="121.92" x2="162.56" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VLOGIC" class="0">
@@ -7518,7 +7584,7 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <label x="193.04" y="93.98" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="152.4" y1="83.82" x2="152.4" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="83.82" x2="162.56" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="SJ1" gate="G$1" pin="3"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 </segment>
@@ -7632,8 +7698,15 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <segment>
 <pinref part="U1" gate="G$1" pin="AD0"/>
 <pinref part="SJ1" gate="G$1" pin="2"/>
-<wire x1="124.46" y1="91.44" x2="147.32" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="91.44" x2="157.48" y2="91.44" width="0.1524" layer="91"/>
 <label x="127" y="91.44" size="1.27" layer="95"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="SJ1" gate="G$1" pin="1"/>
+<wire x1="162.56" y1="104.14" x2="162.56" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
