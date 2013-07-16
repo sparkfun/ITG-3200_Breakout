@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -7264,6 +7264,11 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="7.62" y1="5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
 <text x="0" y="0" size="1.9304" layer="94">SFE</text>
 </symbol>
+<symbol name="DGND">
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="FIDUCIAL" prefix="FID">
@@ -7366,6 +7371,19 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 </technologies>
 </device>
 <device name="SM" package="SFE-NEW-WEB-SOLDERMASK">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GND" prefix="GND">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="DGND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -7476,6 +7494,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="LOGO1" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="S"/>
 <part name="LOGO2" library="SparkFun-Aesthetics" deviceset="LOGO-SFE" device="SK"/>
 <part name="R3" library="SparkFun-Resistors" deviceset="10KOHM1/10W1%(0603)" device="0603" value="10K"/>
+<part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7526,6 +7545,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <instance part="LOGO1" gate="G$1" x="190.5" y="45.72"/>
 <instance part="LOGO2" gate="G$1" x="208.28" y="40.64"/>
 <instance part="R3" gate="G$1" x="162.56" y="109.22" rot="R90"/>
+<instance part="GND8" gate="1" x="182.88" y="73.66"/>
 </instances>
 <busses>
 </busses>
@@ -7579,11 +7599,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 </net>
 <net name="GND" class="0">
 <segment>
-<wire x1="203.2" y1="93.98" x2="193.04" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="G$1" pin="3"/>
-<label x="193.04" y="93.98" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="162.56" y1="83.82" x2="162.56" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="SJ1" gate="G$1" pin="3"/>
 <pinref part="GND6" gate="1" pin="GND"/>
@@ -7622,6 +7637,12 @@ We've spent an enormous amount of time creating and checking these footprints an
 <pinref part="C2" gate="G$1" pin="2"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="71.12" y1="139.7" x2="71.12" y2="134.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="3"/>
+<wire x1="203.2" y1="93.98" x2="182.88" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="93.98" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="GND8" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="CLKIN" class="0">
