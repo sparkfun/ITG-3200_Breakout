@@ -1,5 +1,4 @@
 
-
 /*
 Original Author:
 Basic Example Sketch for the ITG-3200 (http://www.sparkfun.com/products/9801)
@@ -19,8 +18,8 @@ Arduino  :  ITG-3200 Breakout
 3.3V  :  VDD
 3.3V  :  VIO
 GND   :  GND
-SDA   :  A4
-SCL   :  A5
+SDA   :  SDA or A4 on older Arduinos
+SCL   :  SCL or A5 on older Arduinos
 
 Load the sketch and open the serial window at 9600 bps. Arduino will output the raw X,Y and Z axis data being read from the gyroscope.
 
