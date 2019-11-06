@@ -7,7 +7,7 @@ Ryan Owens
 3/16/11
 
 Updtaed for Arduino 1.0 and beyond:
-Joel Bartlett 
+Joel Bartlett
 SparkFun Electronics
 10/16/13
 
@@ -61,16 +61,16 @@ void setup()
 {
   //Create a serial connection using a 9600bps baud rate.
   Serial.begin(9600);
-  
+
   //Initialize the I2C communication. This will set the Arduino up as the 'Master' device.
   Wire.begin();
-  
+
   //Read the WHO_AM_I register and print the result
-  char id=0; 
-  id = itgRead(itgAddress, 0x00);  
+  char id=0;
+  id = itgRead(itgAddress, 0x00);
   Serial.print("ID: ");
   Serial.println(id, HEX);
-  
+
   //Configure the gyroscope
   //Set the gyroscope scale for the outputs to +/-2000 degrees per second
   itgWrite(itgAddress, DLPF_FS, (DLPF_FS_SEL_0|DLPF_FS_SEL_1|DLPF_CFG_0));
@@ -94,7 +94,7 @@ void loop()
   Serial.print('\t');
   Serial.print(yRate);
   Serial.print('\t');
-  Serial.println(zRate);  
+  Serial.println(zRate);
 
   //Wait 10ms before reading the values again. (Remember, the output rate was set to 100hz and 1reading per 10ms = 100hz.)
   delay(10);
@@ -127,63 +127,63 @@ unsigned char itgRead(char address, char registerAddress)
 {
   //This variable will hold the contents read from the i2c device.
   unsigned char data=0;
-  
+
   //Send the register address to be read.
   Wire.beginTransmission(address);
   //Send the Register Address
   Wire.write(registerAddress);
   //End the communication sequence.
   Wire.endTransmission();
-  
+
   //Ask the I2C device for data
-  Wire.beginTransmission(address);
+//  Wire.beginTransmission(address);
   Wire.requestFrom(address, 1);
-  
+
   //Wait for a response from the I2C device
   if(Wire.available()){
     //Save the data sent from the I2C device
     data = Wire.read();
   }
-  
+
   //End the communication sequence.
-  Wire.endTransmission();
-  
+//  Wire.endTransmission();
+
   //Return the data read during the operation
   return data;
 }
 
 //This function is used to read the X-Axis rate of the gyroscope. The function returns the ADC value from the Gyroscope
-//NOTE: This value is NOT in degrees per second. 
+//NOTE: This value is NOT in degrees per second.
 //Usage: int xRate = readX();
 int readX(void)
 {
   int data=0;
   data = itgRead(itgAddress, GYRO_XOUT_H)<<8;
-  data |= itgRead(itgAddress, GYRO_XOUT_L);  
-  
+  data |= itgRead(itgAddress, GYRO_XOUT_L);
+
   return data;
 }
 
 //This function is used to read the Y-Axis rate of the gyroscope. The function returns the ADC value from the Gyroscope
-//NOTE: This value is NOT in degrees per second. 
+//NOTE: This value is NOT in degrees per second.
 //Usage: int yRate = readY();
 int readY(void)
 {
   int data=0;
   data = itgRead(itgAddress, GYRO_YOUT_H)<<8;
-  data |= itgRead(itgAddress, GYRO_YOUT_L);  
-  
+  data |= itgRead(itgAddress, GYRO_YOUT_L);
+
   return data;
 }
 
 //This function is used to read the Z-Axis rate of the gyroscope. The function returns the ADC value from the Gyroscope
-//NOTE: This value is NOT in degrees per second. 
+//NOTE: This value is NOT in degrees per second.
 //Usage: int zRate = readZ();
 int readZ(void)
 {
   int data=0;
   data = itgRead(itgAddress, GYRO_ZOUT_H)<<8;
-  data |= itgRead(itgAddress, GYRO_ZOUT_L);  
-  
+  data |= itgRead(itgAddress, GYRO_ZOUT_L);
+
   return data;
 }
