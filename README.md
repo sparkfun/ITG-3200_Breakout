@@ -1,7 +1,7 @@
 ITG-3200 Breakout Board
 ===================================================
 
-[![ITG-3200 Breakout](https://dlnmh9ip6v2uc.cloudfront.net/images/products/1/1/9/7/7/11977-02_medium.jpg)
+[![ITG-3200 Breakout](https://cdn.sparkfun.com/assets/parts/8/4/6/5/11977-02.jpg)
 *Triple-Axis Digital-Output Gyro ITG-3200 Breakout(SEN-11977)*](https://www.sparkfun.com/products/11977)
 
 This is a breakout board for InvenSense's ITG-3200. This sensor is triple-axis, digital output and a MEMS gyroscope.
